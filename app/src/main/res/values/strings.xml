@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+
+    <!-- Tabs Name -->
+    <string name="tab_one">Chat</string>
+    <string name="tab_two">Chat Detail</string>
+</resources>
