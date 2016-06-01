@@ -168,13 +168,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean updateChatFavStatus(long position) {
+    public boolean updateChatFavStatus(long position, boolean isFav) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         String condition = CHAT_KEY_ID + " = (" + position + ")";
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CHAT_FAV, 1);
+        if(isFav)
+            contentValues.put(CHAT_FAV, 1);
+        else
+            contentValues.put(CHAT_FAV, 0);
 
 
         long rows = db.update(TABLE_CHAT_APP, contentValues, condition, null);

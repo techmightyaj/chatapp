@@ -149,11 +149,11 @@ public class Chat extends Fragment implements Response.ErrorListener, Response.L
         Log.e(TAG, "Msg:- " + item.getName());
         if(item.isFavMsg()) {
             item.setFavMsg(false);
-            databaseHelper.updateChatFavStatus(position+1);
+            databaseHelper.updateChatFavStatus(position+1, false);
         }
         else {
             item.setFavMsg(true);
-            databaseHelper.updateChatFavStatus(position+1);
+            databaseHelper.updateChatFavStatus(position+1, true);
         }
 
         msgListAdapter.notifyDataSetChanged();
